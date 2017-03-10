@@ -13,7 +13,7 @@
         body.vjs-full-window .player_wrapper{
             position: static;
         }
-        .player_wrapper{
+/*        .player_wrapper{
             position: relative;
             max-width: 960px;
             width: 100%;
@@ -28,15 +28,12 @@
             top: 0;
             left: 0;
         }
-    </style>
+*/    </style>
 </head>
 <body>
-<div class="player_wrapper">
-    <div class="player_container">
-        <video id="videojs-panorama-player" class="video-js vjs-default-skin" poster="assets/poster.jpg"  crossorigin="anonymous" controls>
-            <source src="video.mp4" type='video/mp4'>
-        </video>
-    </div>
+    <video id="videojs-panorama-player" class="video-js vjs-default-skin" crossorigin="anonymous" controls>
+        <source src="video.mp4" type='video/mp4'>
+    </video>
 </div>
 
 <script src="video.min.js"></script>
@@ -60,6 +57,8 @@
         var height = videoElement.offsetHeight;
         player.width(width), player.height(height);
         player.panorama({
+             backToVerticalCenter : false,
+             backToHorizonCenter  : false,
             clickAndDrag: true,
             clickToToggle: (!isMobile()),
             autoMobileOrientation: false,
