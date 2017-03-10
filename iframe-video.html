@@ -57,12 +57,12 @@
         var height = videoElement.offsetHeight;
         player.width(width), player.height(height);
         player.panorama({
-             backToVerticalCenter : false,
-             backToHorizonCenter  : false,
+            backToVerticalCenter : false,
+            backToHorizonCenter  : false,
+            VREnable             : false,
             clickAndDrag: true,
             clickToToggle: (!isMobile()),
-            autoMobileOrientation: false,
-            initFov: 100,
+            autoMobileOrientation: true,
             NoticeMessage: '',
             callback: function () {}
         });
@@ -80,15 +80,15 @@
             return /iPhone|iPad|iPod/i.test(navigator.userAgent);
         }
 
-        if(isIos()){
-            player.controlBar.fullscreenToggle.on("tap", function (){
-                if(!player.isFullscreen()){
-                    parent.postMessage("enterFullWindow","*");
-                }else{
-                    parent.postMessage("exitFullWindow","*");
-                }
-            });
-        }
+        // if(isIos()){
+        //     player.controlBar.fullscreenToggle.on("tap", function (){
+        //         if(!player.isFullscreen()){
+        //             parent.postMessage("enterFullWindow","*");
+        //         }else{
+        //             parent.postMessage("exitFullWindow","*");
+        //         }
+        //     });
+        // }
     }(window, window.videojs));
 </script>
 </body>
