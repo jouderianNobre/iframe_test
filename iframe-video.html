@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>videojs-panorama Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/bower_components/videojs_5/dist/video-js.css" rel="stylesheet">
-    <link href="/dist/videojs-panorama.css" rel="stylesheet">
+    <link href="video-js.css" rel="stylesheet">
+    <link href="videojs-panorama.css" rel="stylesheet">
     <style>
         body{
             margin: 0;
@@ -39,8 +39,8 @@
     </div>
 </div>
 
-<script src="video.js"></script>
-<script src="three.js"></script>
+<script src="video.min.js"></script>
+<script src="three.min.js"></script>
 <script src="videojs-panorama.v5.js"></script>
 <script>
     function isMobile() {
@@ -83,7 +83,7 @@
 
         if(isIos()){
             player.controlBar.fullscreenToggle.on("tap", function (){
-1                if(!player.isFullscreen()){
+                if(!player.isFullscreen()){
                     parent.postMessage("enterFullWindow","*");
                 }else{
                     parent.postMessage("exitFullWindow","*");
