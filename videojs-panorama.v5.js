@@ -483,7 +483,8 @@ var BaseCanvas = function BaseCanvas(baseComponent, THREE) {
         },
 
         handleResize: function handleResize() {
-            this.width = this.player().el().offsetWidth, this.height = this.player().el().offsetHeight;
+            this.width  = this.player().el().offsetWidth;
+            this.height = this.player().el().offsetHeight;
             this.renderer.setSize(this.width, this.height);
         },
 
@@ -1496,9 +1497,11 @@ var defaults = {
 function playerResize(player) {
     var canvas = player.getChild('Canvas');
     return function () {
-        player.el().style.width = window.innerWidth + "px";
-        player.el().style.height = window.innerHeight + "px";
-        canvas.handleResize();
+		setTimeout(function(){
+	        player.el().style.width = window.innerWidth + "px";
+	        player.el().style.height = window.innerHeight + "px";
+	        canvas.handleResize();
+		}, 0);
     };
 }
 
